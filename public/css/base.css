@@ -1,0 +1,132 @@
+@font-face {
+  font-family: 'BlickVariable';
+  src: url('https://utils.blick.ch/static/fonts/Blick/BlickVariable.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 1 999; 
+}
+
+@font-face {
+  font-family: 'InterVariable';
+  src: url('https://utils.blick.ch/static/fonts/Inter/InterVariable.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 1 999; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterVariable';
+  src: url('https://utils.blick.ch/static/fonts/Inter/InterVariable-Italic.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 1 999; 
+  font-style: italic;
+}
+
+:root {
+  /* Primitives */
+  --color-red-100: #FCE5E5;
+  --color-red-400: #FF0000;
+  --color-red-500: #E20000;
+  --color-red-900: #A70000;
+
+  --color-green-100: #EFF5E8;
+  --color-green-500: #62A01A;
+  --color-green-700: #508216;
+  --color-green-900: #385912;
+  --color-green-950: #181B11;
+
+  --color-yellow-500: #FFCE00;
+
+  --color-white: #FFFFFF;
+
+  --color-grey-100: #F5F5F5;
+  --color-grey-200: #E1E0E0;
+  --color-grey-300: #C8C6C6;
+  --color-grey-400: #A5A1A1;
+  --color-grey-500: #837C7C;
+  --color-grey-600: #6A6262;
+  --color-grey-700: #504949;
+  --color-grey-800: #3B3535;
+  --color-grey-900: #292424;
+  --color-grey-950: #1E1A1A;
+
+  --color-black: #121010;
+
+  --color-success: #29CC49;
+
+  --color-alpha-black-0: rgba(18, 16, 16, 0);
+  --color-alpha-black-10: rgba(18, 16, 16, 0.1);
+  --color-alpha-black-20: rgba(18, 16, 16, 0.2);
+  --color-alpha-black-30: rgba(18, 16, 16, 0.3);
+  --color-alpha-black-40: rgba(18, 16, 16, 0.4);
+  --color-alpha-black-50: rgba(18, 16, 16, 0.5);
+  --color-alpha-black-60: rgba(18, 16, 16, 0.6);
+  --color-alpha-black-70: rgba(18, 16, 16, 0.7);
+  --color-alpha-black-80: rgba(18, 16, 16, 0.8);
+  --color-alpha-black-90: rgba(18, 16, 16, 0.9);
+
+  /* Semantic Colors */
+
+  --color-text-default: var(--is-light-theme, var(--color-black)) var(--is-dark-theme, var(--color-grey-100));
+  --color-text-default_hover: var(--is-light-theme, var(--color-grey-900)) var(--is-dark-theme, var(--color-grey-200));
+  --color-text-default_disabled: var(--is-light-theme, var(--color-grey-400)) var(--is-dark-theme, var(--color-grey-700));
+  --color-text-weak: var(--is-light-theme, var(--color-grey-600)) var(--is-dark-theme, var(--color-grey-400));
+  --color-text-inverse: var(--is-light-theme, var(--color-white)) var(--is-dark-theme, var(--color-black));
+  --color-text-brand: var(--is-light-theme, var(--color-red-500)) var(--is-dark-theme, var(--color-red-400));
+  --color-text-brand_hover: var(--is-light-theme, var(--color-red-900)) var(--is-dark-theme, var(--color-red-900));
+  --color-text-sport: var(--is-light-theme, var(--color-green-700)) var(--is-dark-theme, var(--color-green-500));
+  --color-text-sport_hover: var(--is-light-theme, var(--color-green-900)) var(--is-dark-theme, var(--color-green-900));
+
+  --color-stroke-default: var(--is-light-theme, var(--color-grey-600)) var(--is-dark-theme, var(--color-grey-400));
+  --color-stroke-default_disabled: var(--is-light-theme, var(--color-grey-300)) var(--is-dark-theme, var(--color-grey-800));
+  --color-stroke-weak: var(--is-light-theme, var(--color-grey-300)) var(--is-dark-theme, var(--color-grey-800));
+  --color-stroke-strong: var(--is-light-theme, var(--color-black)) var(--is-dark-theme, var(--color-white));
+  --color-stroke-strong_hover: var(--is-light-theme, var(--color-grey-900)) var(--is-dark-theme, var(--color-grey-200));
+  --color-stroke-inverse: var(--is-light-theme, var(--color-white)) var(--is-dark-theme, var(--color-black));
+  --color-stroke-brand: var(--is-light-theme, var(--color-red-500)) var(--is-dark-theme, var(--color-red-400));
+  --color-stroke-brand_hover: var(--is-light-theme, var(--color-red-900)) var(--is-dark-theme, var(--color-red-900));
+  --color-stroke-sport: var(--is-light-theme, var(--color-green-500)) var(--is-dark-theme, var(--color-green-500));
+  --color-stroke-sport_hover: var(--is-light-theme, var(--color-green-900)) var(--is-dark-theme, var(--color-green-900));
+
+  --color-fill-default: var(--is-light-theme, var(--color-white)) var(--is-dark-theme, var(--color-black));
+  --color-fill-default_disabled: var(--is-light-theme, var(--color-grey-200)) var(--is-dark-theme, var(--color-grey-900));
+  --color-fill-weak: var(--is-light-theme, var(--color-grey-100)) var(--is-dark-theme, var(--color-grey-950));
+  --color-fill-strong: var(--is-light-theme, var(--color-grey-200)) var(--is-dark-theme, var(--color-grey-800));
+  --color-fill-strongest: var(--is-light-theme, var(--color-grey-600)) var(--is-dark-theme, var(--color-grey-400));
+  --color-fill-brand: var(--is-light-theme, var(--color-red-500)) var(--is-dark-theme, var(--color-red-400));
+  --color-fill-brand_hover: var(--is-light-theme, var(--color-red-900)) var(--is-dark-theme, var(--color-red-900));
+  --color-fill-sport: var(--is-light-theme, var(--color-green-500)) var(--is-dark-theme, var(--color-green-500));
+  --color-fill-sport_hover: var(--is-light-theme, var(--color-green-900)) var(--is-dark-theme, var(--color-green-900));
+  --color-fill-sport-weak: var(--is-light-theme, var(--color-green-100)) var(--is-dark-theme, var(--color-green-950));
+  --color-fill-inverse: var(--is-light-theme, var(--color-black)) var(--is-dark-theme, var(--color-white));
+  --color-fill-inverse_hover: var(--is-light-theme, var(--color-grey-900)) var(--is-dark-theme, var(--color-grey-200));
+  --color-fill-video: var(--is-light-theme, var(--color-black)) var(--is-dark-theme, var(--color-grey-900));
+
+  --color-static-white: var(--color-white);
+  --color-static-neutral-100: var(--color-grey-100);
+  --color-static-neutral-200: var(--color-grey-200);
+  --color-static-neutral-300: var(--color-grey-300);
+  --color-static-neutral-400: var(--color-grey-400);
+  --color-static-neutral-700: var(--color-grey-700);
+  --color-static-neutral-800: var(--color-grey-800);
+  --color-static-neutral-900: var(--color-grey-900);
+  --color-static-neutral-950: var(--color-grey-950);
+  --color-static-black: var(--color-black);
+  --color-static-green-500: var(--color-green-500);
+  --color-static-green-700: var(--color-green-700);
+  --color-static-green-900: var(--color-green-900);
+  --color-static-red-400: var(--color-red-400);
+  --color-static-red-500: var(--color-red-500);
+  --color-static-red-900: var(--color-red-900);
+  --color-static-yellow-500: var(--color-yellow-500);
+
+  --color-overlay-default: var(--is-light-theme, var(--color-alpha-black-70)) var(--is-dark-theme, var(--color-alpha-black-70));
+  
+  --color-icon-brand: var(--is-light-theme, var(--color-red-500)) var(--is-dark-theme, var(--color-red-400));
+  --color-icon-brand_hover: var(--is-light-theme, var(--color-red-900)) var(--is-dark-theme, var(--color-red-900));
+  --color-icon-default: var(--is-light-theme, var(--color-black)) var(--is-dark-theme, var(--color-grey-100));
+  --color-icon-default_disabled: var(--is-light-theme, var(--color-grey-400)) var(--is-dark-theme, var(--color-grey-700));
+  --color-icon-inverse: var(--is-light-theme, var(--color-white)) var(--is-dark-theme, var(--color-black));
+  --color-icon-sport: var(--is-light-theme, var(--color-green-700)) var(--is-dark-theme, var(--color-green-500));
+  --color-icon-sport_hover: var(--is-light-theme, var(--color-green-900)) var(--is-dark-theme, var(--color-green-900));
+  --color-icon-weak: var(--is-light-theme, var(--color-grey-600)) var(--is-dark-theme, var(--color-grey-400));
+}

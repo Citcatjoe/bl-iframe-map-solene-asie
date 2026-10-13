@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+
+/*
+ * Les couleurs viennent de base.css (Blick, clair/sombre), chargé dans index.html.
+ * On retire la palette Tailwind : ses --color-red-500 etc. écraseraient les primitives Blick.
+ */
+@theme {
+  --color-*: initial;
+  --font-display: 'BlickVariable', 'InterVariable', sans-serif;
+  --font-body: 'InterVariable', system-ui, sans-serif;
+  --radius-pill: 9999px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-control: 0 1px 2px rgba(18, 16, 16, 0.12), 0 2px 8px rgba(18, 16, 16, 0.12);
+  --shadow-menu: 0 2px 6px rgba(18, 16, 16, 0.08), 0 12px 32px rgba(18, 16, 16, 0.16);
+}
+
+@theme inline {
+  --color-ink: var(--color-text-default);
+  --color-ink-weak: var(--color-text-weak);
+  --color-ink-brand: var(--color-text-brand);
+  --color-ink-inverse: var(--color-text-inverse);
+  --color-surface: var(--color-fill-default);
+  --color-surface-weak: var(--color-fill-weak);
+  --color-surface-strong: var(--color-fill-strong);
+  --color-brand: var(--color-fill-brand);
+  --color-brand-hover: var(--color-fill-brand_hover);
+  --color-inverse: var(--color-fill-inverse);
+  --color-inverse-hover: var(--color-fill-inverse_hover);
+  --color-line: var(--color-stroke-weak);
+  --color-line-strong: var(--color-stroke-strong);
+  --color-glyph: var(--color-icon-default);
+  --color-glyph-weak: var(--color-icon-weak);
+  --color-water: var(--map-water);
+}
+
+@layer base {
+  /* Thème clair tant que iframeHeightAdjustment.js n'a pas posé la paire (style inline, prioritaire). */
+  :root {
+    --is-light-theme: initial;
+    --is-dark-theme: ;
+    /* Eau (fleuves, lacs) : hors design system, même bascule que base.css. Synchro avec WATER (src/map/layers.js). */
+    --map-water: var(--is-light-theme, #2b7bb9) var(--is-dark-theme, #5faae3);
+  }
+  html,
+  body {
+    margin: 0;
+    background: var(--color-fill-default);
+  }
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text-default);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Texte des gestes coopératifs (Ctrl/⌘ + molette, deux doigts) en police Blick. */
+.maplibregl-cooperative-gesture-screen {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+}
